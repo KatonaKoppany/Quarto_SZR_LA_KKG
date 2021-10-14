@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quarto_SZR_LA_KKG", "Quarto_SZR_LA_KKG\Quarto_SZR_LA_KKG.csproj", "{98343FFD-D61A-4937-BEA4-00268C53828E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98343FFD-D61A-4937-BEA4-00268C53828E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98343FFD-D61A-4937-BEA4-00268C53828E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98343FFD-D61A-4937-BEA4-00268C53828E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98343FFD-D61A-4937-BEA4-00268C53828E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {367C0474-2CA5-42C1-A78A-AAB606A0A226}
+	EndGlobalSection
+EndGlobal
