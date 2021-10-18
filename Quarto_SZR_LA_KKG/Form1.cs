@@ -36,7 +36,6 @@ namespace Quarto_SZR_LA_KKG
             int x = 286;
             int y = 30;
 
-
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -51,7 +50,27 @@ namespace Quarto_SZR_LA_KKG
 
                     x += 106;
                 }
+
                 x = 286;
+                y += 106;
+            }
+
+            x = 76;
+            y = 500;
+            
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    PictureBox babu = new PictureBox();
+                    babu.Size = new Size(100, 100);
+                    babu.Location = new Point(x + 6, y);
+                    babu.Image = Image.FromFile($"D:\\asztalialk_KKG\\Quarto_SZR_LA_KKG\\Quarto_SZR_LA_KKG\\bin\\Debug\\{i}{j}.png");
+
+                    this.Controls.Add(babu);
+                    x += 106;
+                }
+                x = 76;
                 y += 106;
             }
             this.MaximumSize = new Size(1000, 1000);
