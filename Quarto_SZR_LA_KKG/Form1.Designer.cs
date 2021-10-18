@@ -81,6 +81,7 @@ namespace Quarto_SZR_LA_KKG
             this.start_BTN.TabIndex = 4;
             this.start_BTN.Text = "Start";
             this.start_BTN.UseVisualStyleBackColor = true;
+            this.start_BTN.Click += new System.EventHandler(this.start_BTN_Click);
             // 
             // Form1
             // 
