@@ -15,9 +15,17 @@ namespace Quarto_SZR_LA_KKG
         static PictureBox[,] jatekter = new PictureBox[4, 4];
         static string nev1 = "";
         static string nev2 = "";
+
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void klikk(object sender, EventArgs e)
+        {
+            PictureBox klikkelt = sender as PictureBox;
+
         }
 
         private void start_BTN_Click(object sender, EventArgs e)
@@ -40,6 +48,8 @@ namespace Quarto_SZR_LA_KKG
             {
                 for (int j = 0; j < 4; j++)
                 {
+
+
                     PictureBox kep1 = new PictureBox();
                     kep1.Size = new Size(100, 100);
                     kep1.Location = new Point(x + 6, y);
@@ -57,24 +67,45 @@ namespace Quarto_SZR_LA_KKG
 
             x = 76;
             y = 500;
-            
+            int f = 0;
+
             for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
                     PictureBox babu = new PictureBox();
                     babu.Size = new Size(100, 100);
+                    babu.BackgroundImage = keplista.Images[f];
+                    f++;
                     babu.Location = new Point(x + 6, y);
-                    babu.Image = Image.FromFile($"D:\\asztalialk_KKG\\Quarto_SZR_LA_KKG\\Quarto_SZR_LA_KKG\\bin\\Debug\\{i}{j}.png");
-
                     this.Controls.Add(babu);
                     x += 106;
                 }
                 x = 76;
                 y += 106;
             }
+
             this.MaximumSize = new Size(1000, 1000);
             this.Size = new Size(1000, 900);
+            jelenlegipicture();
+        }
+
+        private void jelenlegipicture()
+        {
+
+            Label labeljelen = new Label();
+            labeljelen.Location = new Point(100, 140);
+            labeljelen.Text = "Jelenlegi bábú";
+            labeljelen.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(labeljelen);
+
+            PictureBox jelenlegikep = new PictureBox();
+            jelenlegikep.Location = new Point(100, 200);
+            jelenlegikep.Size = new Size(100, 100);
+            jelenlegikep.BackgroundImage = keplista.Images[0];
+
+            this.Controls.Add(jelenlegikep);
+
         }
 
         private void jatekosnevellenorzes()

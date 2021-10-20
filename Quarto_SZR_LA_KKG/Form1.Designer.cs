@@ -29,11 +29,14 @@ namespace Quarto_SZR_LA_KKG
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.jatekos1_TBOX = new System.Windows.Forms.TextBox();
             this.jatekos2_TBOX = new System.Windows.Forms.TextBox();
             this.start_BTN = new System.Windows.Forms.Button();
+            this.keplista = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +86,27 @@ namespace Quarto_SZR_LA_KKG
             this.start_BTN.UseVisualStyleBackColor = true;
             this.start_BTN.Click += new System.EventHandler(this.start_BTN_Click);
             // 
+            // keplista
+            // 
+            this.keplista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("keplista.ImageStream")));
+            this.keplista.TransparentColor = System.Drawing.Color.Transparent;
+            this.keplista.Images.SetKeyName(0, "01.png");
+            this.keplista.Images.SetKeyName(1, "02.png");
+            this.keplista.Images.SetKeyName(2, "03.png");
+            this.keplista.Images.SetKeyName(3, "04.png");
+            this.keplista.Images.SetKeyName(4, "05.png");
+            this.keplista.Images.SetKeyName(5, "06.png");
+            this.keplista.Images.SetKeyName(6, "07.png");
+            this.keplista.Images.SetKeyName(7, "08.png");
+            this.keplista.Images.SetKeyName(8, "11.png");
+            this.keplista.Images.SetKeyName(9, "12.png");
+            this.keplista.Images.SetKeyName(10, "13.png");
+            this.keplista.Images.SetKeyName(11, "14.png");
+            this.keplista.Images.SetKeyName(12, "15.png");
+            this.keplista.Images.SetKeyName(13, "16.png");
+            this.keplista.Images.SetKeyName(14, "17.png");
+            this.keplista.Images.SetKeyName(15, "18.png");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +133,7 @@ namespace Quarto_SZR_LA_KKG
         private System.Windows.Forms.TextBox jatekos1_TBOX;
         private System.Windows.Forms.TextBox jatekos2_TBOX;
         private System.Windows.Forms.Button start_BTN;
+        private System.Windows.Forms.ImageList keplista;
     }
 }
 
