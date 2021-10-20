@@ -13,9 +13,9 @@ namespace Quarto_SZR_LA_KKG
     public partial class Form1 : Form
     {
         static PictureBox[,] jatekter = new PictureBox[4, 4];
+        static PictureBox[,] babuk = new PictureBox[2, 8];
         static string nev1 = "";
         static string nev2 = "";
-        static PictureBox[,] babuk = new PictureBox[2, 8];
         static PictureBox jelenlegikep;
 
         public Form1()
@@ -30,7 +30,9 @@ namespace Quarto_SZR_LA_KKG
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
-            jelenlegikep.BackgroundImage = babuk[sor, oszlop].BackgroundImage;
+            MessageBox.Show($"{Convert.ToString(sor)} , {Convert.ToString(oszlop)}");
+
+            jelenlegikep.Image = babuk[sor, oszlop].Image;
         }
 
         private void start_BTN_Click(object sender, EventArgs e)
