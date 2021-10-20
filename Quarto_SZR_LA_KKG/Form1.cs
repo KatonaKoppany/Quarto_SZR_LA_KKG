@@ -15,7 +15,8 @@ namespace Quarto_SZR_LA_KKG
         static PictureBox[,] jatekter = new PictureBox[4, 4];
         static string nev1 = "";
         static string nev2 = "";
-
+        static PictureBox[,] babuk = new PictureBox[2, 8];
+        static PictureBox jelenlegikep;
 
         public Form1()
         {
@@ -26,6 +27,10 @@ namespace Quarto_SZR_LA_KKG
         {
             PictureBox klikkelt = sender as PictureBox;
 
+            int sor = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
+            int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
+
+            jelenlegikep.BackgroundImage = babuk[sor, oszlop].BackgroundImage;
         }
 
         private void start_BTN_Click(object sender, EventArgs e)
@@ -75,10 +80,13 @@ namespace Quarto_SZR_LA_KKG
                 {
                     PictureBox babu = new PictureBox();
                     babu.Size = new Size(100, 100);
+                    babuk[i, j] = babu;
+                    babu.Name = $"babu_{i}_{j}";
                     babu.BackgroundImage = keplista.Images[f];
                     f++;
                     babu.Location = new Point(x + 6, y);
                     this.Controls.Add(babu);
+                    babu.MouseClick += new MouseEventHandler(klikk);
                     x += 106;
                 }
                 x = 76;
@@ -94,15 +102,16 @@ namespace Quarto_SZR_LA_KKG
         {
 
             Label labeljelen = new Label();
-            labeljelen.Location = new Point(100, 140);
+            labeljelen.Location = new Point(75, 140);
             labeljelen.Text = "Jelenlegi bábú";
             labeljelen.Font = new Font("Arial", 14, FontStyle.Bold);
+            labeljelen.ForeColor = System.Drawing.Color.White;
+            labeljelen.Size = new Size(200, 50);
             this.Controls.Add(labeljelen);
 
             PictureBox jelenlegikep = new PictureBox();
             jelenlegikep.Location = new Point(100, 200);
             jelenlegikep.Size = new Size(100, 100);
-            jelenlegikep.BackgroundImage = keplista.Images[0];
 
             this.Controls.Add(jelenlegikep);
 
