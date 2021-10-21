@@ -23,16 +23,40 @@ namespace Quarto_SZR_LA_KKG
             InitializeComponent();
         }
 
-        private void klikk(object sender, EventArgs e)
+        private void jatekterklikk(object sender, EventArgs e)
         {
             PictureBox klikkelt = sender as PictureBox;
 
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
-            MessageBox.Show($"{Convert.ToString(sor)} , {Convert.ToString(oszlop)}");
+            jatekter[sor, oszlop].BackgroundImage = jelenlegikep.BackgroundImage;
 
-            jelenlegikep.Image = babuk[sor, oszlop].Image;
+            if(jatekter[sor, oszlop].BackgroundImage == jelenlegikep.BackgroundImage)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if (babuk[i, j].BackgroundImage == jelenlegikep.BackgroundImage)
+                        {
+                            babuk[i, j].Visible = false;
+                        }
+                    }
+                }
+                jelenlegikep.BackgroundImage = null;
+            }
+        }
+
+
+        private void babuklikk(object sender, EventArgs e)
+        {
+            PictureBox klikkelt = sender as PictureBox;
+
+            int sor = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
+            int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
+
+            jelenlegikep.BackgroundImage = babuk[sor, oszlop].BackgroundImage;
         }
 
         private void start_BTN_Click(object sender, EventArgs e)
@@ -61,7 +85,8 @@ namespace Quarto_SZR_LA_KKG
                     kep1.Size = new Size(100, 100);
                     kep1.Location = new Point(x + 6, y);
                     kep1.BackColor = Color.White;
-
+                    kep1.MouseClick += new MouseEventHandler(jatekterklikk);
+                    kep1.Name = $"jatek_{i}_{j}";
                     this.Controls.Add(kep1);
                     jatekter[i, j] = kep1;
 
@@ -82,14 +107,15 @@ namespace Quarto_SZR_LA_KKG
                 {
                     PictureBox babu = new PictureBox();
                     babu.Size = new Size(100, 100);
-                    babuk[i, j] = babu;
                     babu.Name = $"babu_{i}_{j}";
                     babu.BackgroundImage = keplista.Images[f];
-                    f++;
                     babu.Location = new Point(x + 6, y);
+                    babu.MouseClick += new MouseEventHandler(babuklikk);
+                    babuk[i, j] = babu;
                     this.Controls.Add(babu);
-                    babu.MouseClick += new MouseEventHandler(klikk);
+                    f++;
                     x += 106;
+
                 }
                 x = 76;
                 y += 106;
@@ -111,10 +137,9 @@ namespace Quarto_SZR_LA_KKG
             labeljelen.Size = new Size(200, 50);
             this.Controls.Add(labeljelen);
 
-            PictureBox jelenlegikep = new PictureBox();
+            jelenlegikep = new PictureBox();
             jelenlegikep.Location = new Point(100, 200);
             jelenlegikep.Size = new Size(100, 100);
-
             this.Controls.Add(jelenlegikep);
 
         }
@@ -123,7 +148,7 @@ namespace Quarto_SZR_LA_KKG
         {
             nev1 = jatekos1_TBOX.Text;
             nev2 = jatekos2_TBOX.Text;
-
+            /*
             if(Convert.ToString(nev1) == "")
             {
                 MessageBox.Show("Add meg az első játékos nevét!");
@@ -134,8 +159,10 @@ namespace Quarto_SZR_LA_KKG
             }
             else 
             {
-                jatekterletrehozas();
+                
             }
+            */
+            jatekterletrehozas();
         }
     }
 }
