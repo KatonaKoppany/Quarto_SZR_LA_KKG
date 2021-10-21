@@ -17,6 +17,8 @@ namespace Quarto_SZR_LA_KKG
         static string nev1 = "";
         static string nev2 = "";
         static PictureBox jelenlegikep;
+        static PictureBox[] keszitok = new PictureBox[3];
+        static Label[] keszitoklabel = new Label[3];
 
         public Form1()
         {
@@ -71,6 +73,12 @@ namespace Quarto_SZR_LA_KKG
             start_BTN.Visible = false;
             jatekos1_TBOX.Visible = false;
             jatekos2_TBOX.Visible = false;
+            pictureBox1.Visible = false;
+            label3.Visible = false;
+            button1.Visible = false;
+            button3.Visible = false;
+            richTextBox1.Visible = false;
+            button2.Visible = false;
 
             int x = 286;
             int y = 30;
@@ -163,6 +171,101 @@ namespace Quarto_SZR_LA_KKG
             }
             */
             jatekterletrehozas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Visible = true;
+            button2.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Visible = false;
+            button2.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PictureBox picturebox1 = new PictureBox();
+            picturebox1.Location = new Point(-6, -4);
+            picturebox1.Size = new Size(212, 508);
+            picturebox1.BackColor = Color.White;
+            pictureBox1.Visible = false;
+            picturebox1.Image = imageList1.Images["koppany.jpg"];
+            picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(picturebox1);
+            PictureBox picturebox2 = new PictureBox();
+            picturebox2.Location = new Point(160, -12);
+            picturebox2.Size = new Size(212, 508);
+            picturebox2.BackColor = Color.White;
+            pictureBox1.Visible = false;
+            picturebox2.Image = imageList1.Images["ricsko.jpg"];
+            picturebox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(picturebox2);
+            PictureBox picturebox3 = new PictureBox();
+            picturebox3.Location = new Point(350, -2);
+            picturebox3.Size = new Size(212, 508);
+            picturebox3.BackColor = Color.White;
+            pictureBox1.Visible = false;
+            picturebox3.Image = imageList1.Images["adrian.jpg"];
+            picturebox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(picturebox3);
+            Label kopi = new Label();
+            kopi.Location = new Point(45, 45);
+            this.Controls.Add(kopi);
+            kopi.BringToFront();
+            kopi.Text = "kopi";
+            kopi.ForeColor = Color.White;
+            Label ricsi = new Label();
+            ricsi.Location = new Point(244, 26);
+            this.Controls.Add(ricsi);
+            ricsi.BringToFront();
+            ricsi.Text = "ricsi";
+            ricsi.ForeColor = Color.White;
+            Label adrian = new Label();
+            adrian.Location = new Point(400, 35);
+            this.Controls.Add(adrian);
+            adrian.BringToFront();
+            adrian.Text = "adrian";
+            adrian.ForeColor = Color.White;
+            label3.Visible = false;
+            label2.Visible = false;
+            label1.Visible = false;
+            jatekos1_TBOX.Visible = false;
+            jatekos2_TBOX.Visible = false;
+            start_BTN.Visible = false;
+            button1.Visible = false;
+            button3.Visible = false;
+            button4.Visible = true;
+            keszitok[0] = picturebox1;
+            keszitok[1] = picturebox2;
+            keszitok[2] = picturebox3;
+            keszitoklabel[0] = ricsi;
+            keszitoklabel[1] = kopi;
+            keszitoklabel[2] = adrian;
+            richTextBox1.Visible = false;
+            button2.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label3.Visible = true;
+            label2.Visible = true;
+            label1.Visible = true;
+            jatekos1_TBOX.Visible = true;
+            jatekos2_TBOX.Visible = true;
+            start_BTN.Visible = true;
+            button1.Visible = true;
+            button3.Visible = true;
+            pictureBox1.Visible = true;
+            keszitok[0].Visible = false;
+            keszitok[1].Visible = false;
+            keszitok[2].Visible = false;
+            keszitoklabel[0].Visible = false;
+            keszitoklabel[1].Visible = false;
+            keszitoklabel[2].Visible = false;
+            button4.Visible = false;
         }
     }
 }
