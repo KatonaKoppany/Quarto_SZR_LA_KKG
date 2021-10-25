@@ -185,6 +185,7 @@ namespace Quarto_SZR_LA_KKG
             button2.Visible = false;
         }
 
+        //KÉSZÍTŐK KEZD
         private void button3_Click(object sender, EventArgs e)
         {
             PictureBox picturebox1 = new PictureBox();
@@ -247,7 +248,9 @@ namespace Quarto_SZR_LA_KKG
             richTextBox1.Visible = false;
             button2.Visible = false;
         }
+        //KÉSZÍTŐK VÉGE
 
+        //X BUTTON KEZD
         private void button4_Click(object sender, EventArgs e)
         {
             label3.Visible = true;
@@ -267,5 +270,6 @@ namespace Quarto_SZR_LA_KKG
             keszitoklabel[2].Visible = false;
             button4.Visible = false;
         }
+        //X BUTTON VÉGE
     }
 }
