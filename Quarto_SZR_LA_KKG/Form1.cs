@@ -35,8 +35,18 @@ namespace Quarto_SZR_LA_KKG
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
             MessageBox.Show(jatekter[sor, oszlop].Name);
-            jatekter[sor, oszlop].BackgroundImage = jelenlegikep.BackgroundImage;
-            jatekter[sor, oszlop].Enabled = false;
+            if (jelenlegikep.BackgroundImage != null)
+            {
+                jatekter[sor, oszlop].BackgroundImage = jelenlegikep.BackgroundImage;
+                jatekter[sor, oszlop].Name = jelenlegikep.Name;
+                jatekter[sor, oszlop].Enabled = false;
+                MessageBox.Show(jatekter[sor, oszlop].Name);
+            }
+            else
+            {
+                MessageBox.Show("Kérem válasszon egy bábút");
+            }
+            
 
             if(jatekter[sor, oszlop].BackgroundImage == jelenlegikep.BackgroundImage)
             {
@@ -52,8 +62,26 @@ namespace Quarto_SZR_LA_KKG
                 }
                 jelenlegikep.BackgroundImage = null;
             }
+
+            jatekterEllenorzes();
         }
-            //KIVÁLASZTOTT BÁBÚ
+
+        private void jatekterEllenorzes()
+        {
+            //VÍZSZINTES ELLENÖRZÉS
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (jatekter[i, j].BackgroundImage != null)
+                    {
+                        
+                    }
+                }
+            }
+        }
+
+        //KIVÁLASZTOTT BÁBÚ
         private void babuklikk(object sender, EventArgs e)
         {
             PictureBox klikkelt = sender as PictureBox;
@@ -62,6 +90,7 @@ namespace Quarto_SZR_LA_KKG
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
             jelenlegikep.BackgroundImage = babuk[sor, oszlop].BackgroundImage;
+            jelenlegikep.Name = Convert.ToString(klikkelt.Name.Split('_')[3]);
             MessageBox.Show(klikkelt.Name);
         }
 
