@@ -67,25 +67,41 @@ namespace Quarto_SZR_LA_KKG
         private void jatekterEllenorzes()
         {
             List<string> babuKod = new List<string>();
+            List<string> babuKodAtloBal = new List<string>();
+            List<string> babuKodAtloJobb = new List<string>();
 
-            //BALÁTLÓ ELLENÖRZÉS
+
+            //BAL ÁTLÓ ELLENÖRZÉS
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (i == j)
+                    if (i == j && jatekter[i, j].BackgroundImage != null)
                     {
-                        babuKod.Add(jatekter[i, j].Name);
+                        babuKodAtloBal.Add(jatekter[i, j].Name);
                     }
                 }
-                if (babuKod.Count == 4)
+                if (babuKodAtloBal.Count == 4)
                 {
-                    kodEllenorzes(babuKod);
+                    kodEllenorzes(babuKod, babuKodAtloBal, babuKodAtloJobb);
                     break;
                 }
-                else
+            }
+
+            //JOBB ÁTLÓ ELLENÖRZÉS
+            for (int i = 3; i >= 0; i--)
+            {
+                for (int j = 0; j < 4; j++)
                 {
-                    babuKod.Clear();
+                    if (i + j == 3 && jatekter[i, j].BackgroundImage != null)
+                    {
+                        babuKodAtloJobb.Add(jatekter[i, j].Name);
+                    }
+                }
+                if (babuKodAtloJobb.Count == 4)
+                {
+                    kodEllenorzes(babuKod, babuKodAtloBal, babuKodAtloJobb);
+                    break;
                 }
             }
 
@@ -101,7 +117,7 @@ namespace Quarto_SZR_LA_KKG
                 }
                 if (babuKod.Count == 4)
                 {
-                    kodEllenorzes(babuKod);
+                    kodEllenorzes(babuKod, babuKodAtloBal, babuKodAtloJobb);
                     break;
                 }
                 else
@@ -122,7 +138,7 @@ namespace Quarto_SZR_LA_KKG
                 }
                 if (babuKod.Count == 4)
                 {
-                    kodEllenorzes(babuKod);
+                    kodEllenorzes(babuKod, babuKodAtloBal, babuKodAtloJobb);
                     break;
                 }
                 else
@@ -136,16 +152,26 @@ namespace Quarto_SZR_LA_KKG
         }
 
         //A LISTÁBA TÖLTÖTT BINÁRIS SZÁMOK ELLENÖRZÉSE
-        private void kodEllenorzes(List<string> babuKod)
+        private void kodEllenorzes(List<string> babuKod, List<string> babuKodAtloBal, List<string> babuKodAtloJobb)
         {
-            MessageBox.Show($"{babuKod[0]} , {babuKod[1]} , {babuKod[2]} , {babuKod[3]}");
             string[,] kodTabla = new string[4, 4];
                 //LISTA 2D TÖMBBEN
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    kodTabla[i, j] = babuKod[i].Substring(j, 1);
+                    if (babuKod.Count == 4)
+                    {
+                        kodTabla[i, j] = babuKod[i].Substring(j, 1);
+                    }
+                    else if (babuKodAtloBal.Count == 4)
+                    {
+                        kodTabla[i, j] = babuKodAtloBal[i].Substring(j, 1);
+                    }
+                    else if (babuKodAtloJobb.Count == 4)
+                    {
+                        kodTabla[i, j] = babuKodAtloJobb[i].Substring(j, 1);
+                    }
                 }
             }
                 //2D TÖMB OSZLOPOS NÉZETE
