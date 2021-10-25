@@ -182,15 +182,19 @@ namespace Quarto_SZR_LA_KKG
                 {
                     ell += $"{kodTabla[j,i]}";
                 }
+                if (ell.Contains("0000"))
+                {
+                    MessageBox.Show("nyert");
+                    break;
+                }
+                else if (ell.Contains("1111"))
+                {
+                    MessageBox.Show("nyert");
+                    break;
+                }
+                ell = "";
             }
-            if (ell.Contains("0000"))
-            {
-                MessageBox.Show("nyert");
-            }
-            else if (ell.Contains("1111"))
-            {
-                MessageBox.Show("nyert");
-            }
+            
 
         }
 
