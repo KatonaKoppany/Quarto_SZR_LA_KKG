@@ -104,22 +104,22 @@ namespace Quarto_SZR_LA_KKG
             // 
             this.keplista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("keplista.ImageStream")));
             this.keplista.TransparentColor = System.Drawing.Color.Transparent;
-            this.keplista.Images.SetKeyName(0, "01.jpg");
-            this.keplista.Images.SetKeyName(1, "02.jpg");
-            this.keplista.Images.SetKeyName(2, "03.jpg");
-            this.keplista.Images.SetKeyName(3, "04.jpg");
-            this.keplista.Images.SetKeyName(4, "05.jpg");
-            this.keplista.Images.SetKeyName(5, "06.jpg");
-            this.keplista.Images.SetKeyName(6, "07.jpg");
-            this.keplista.Images.SetKeyName(7, "08.jpg");
-            this.keplista.Images.SetKeyName(8, "11.jpg");
-            this.keplista.Images.SetKeyName(9, "12.jpg");
-            this.keplista.Images.SetKeyName(10, "13.jpg");
-            this.keplista.Images.SetKeyName(11, "14.jpg");
-            this.keplista.Images.SetKeyName(12, "15.jpg");
-            this.keplista.Images.SetKeyName(13, "16.jpg");
-            this.keplista.Images.SetKeyName(14, "17.jpg");
-            this.keplista.Images.SetKeyName(15, "18.jpg");
+            this.keplista.Images.SetKeyName(0, "1.jpg");
+            this.keplista.Images.SetKeyName(1, "2.jpg");
+            this.keplista.Images.SetKeyName(2, "3.jpg");
+            this.keplista.Images.SetKeyName(3, "4.jpg");
+            this.keplista.Images.SetKeyName(4, "5.jpg");
+            this.keplista.Images.SetKeyName(5, "6.jpg");
+            this.keplista.Images.SetKeyName(6, "7.jpg");
+            this.keplista.Images.SetKeyName(7, "8.jpg");
+            this.keplista.Images.SetKeyName(8, "9.jpg");
+            this.keplista.Images.SetKeyName(9, "10.jpg");
+            this.keplista.Images.SetKeyName(10, "11.jpg");
+            this.keplista.Images.SetKeyName(11, "12.jpg");
+            this.keplista.Images.SetKeyName(12, "13.jpg");
+            this.keplista.Images.SetKeyName(13, "14.jpg");
+            this.keplista.Images.SetKeyName(14, "15.jpg");
+            this.keplista.Images.SetKeyName(15, "16.jpg");
             // 
             // label3
             // 

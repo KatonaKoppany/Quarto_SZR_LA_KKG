@@ -25,6 +25,8 @@ namespace Quarto_SZR_LA_KKG
             InitializeComponent();
         }
 
+        //KIV KÉP ELHELYEZÉSE KEZD
+            //KIVÁLASZTOTT BÁBÚ ELHELYEZÉSE
         private void jatekterklikk(object sender, EventArgs e)
         {
             PictureBox klikkelt = sender as PictureBox;
@@ -32,7 +34,9 @@ namespace Quarto_SZR_LA_KKG
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
+            MessageBox.Show(jatekter[sor, oszlop].Name);
             jatekter[sor, oszlop].BackgroundImage = jelenlegikep.BackgroundImage;
+            jatekter[sor, oszlop].Enabled = false;
 
             if(jatekter[sor, oszlop].BackgroundImage == jelenlegikep.BackgroundImage)
             {
@@ -49,8 +53,7 @@ namespace Quarto_SZR_LA_KKG
                 jelenlegikep.BackgroundImage = null;
             }
         }
-
-
+            //KIVÁLASZTOTT BÁBÚ
         private void babuklikk(object sender, EventArgs e)
         {
             PictureBox klikkelt = sender as PictureBox;
@@ -59,12 +62,17 @@ namespace Quarto_SZR_LA_KKG
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
             jelenlegikep.BackgroundImage = babuk[sor, oszlop].BackgroundImage;
+            MessageBox.Show(klikkelt.Name);
         }
 
+        //KIV KÉP ELHELYEZÉSE VÉGE
+
+        //START KEZD
         private void start_BTN_Click(object sender, EventArgs e)
         {
             jatekosnevellenorzes();
         }
+        //START VÉGE
 
         private void jatekterletrehozas()
         {
@@ -83,12 +91,12 @@ namespace Quarto_SZR_LA_KKG
             int x = 286;
             int y = 30;
 
+
+            //JÁTÉK TÉR
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-
-
                     PictureBox kep1 = new PictureBox();
                     kep1.Size = new Size(100, 100);
                     kep1.Location = new Point(x + 6, y);
@@ -104,18 +112,20 @@ namespace Quarto_SZR_LA_KKG
                 x = 286;
                 y += 106;
             }
+            //JÁTÉK TÉR
 
             x = 76;
             y = 500;
             int f = 0;
-
+            
+            //BÁBÚFELSOROLÁS
             for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
                     PictureBox babu = new PictureBox();
                     babu.Size = new Size(100, 100);
-                    babu.Name = $"babu_{i}_{j}";
+                    babu.Name = $"babu_{i}_{j}_{tulajdonsag(f)}";
                     babu.BackgroundImage = keplista.Images[f];
                     babu.Location = new Point(x + 6, y);
                     babu.MouseClick += new MouseEventHandler(babuklikk);
@@ -123,20 +133,24 @@ namespace Quarto_SZR_LA_KKG
                     this.Controls.Add(babu);
                     f++;
                     x += 106;
-
                 }
                 x = 76;
                 y += 106;
             }
+            //BÁBÚFELSOROLÁS
 
             this.MaximumSize = new Size(1000, 1000);
             this.Size = new Size(1000, 900);
             jelenlegipicture();
         }
 
+        private object tulajdonsag(int f)
+        {
+            return $"{f / 8 % 2}{f / 4 % 2}{f / 2 % 2}{f % 2}";
+        }
+
         private void jelenlegipicture()
         {
-
             Label labeljelen = new Label();
             labeljelen.Location = new Point(75, 140);
             labeljelen.Text = "Jelenlegi bábú";
@@ -149,7 +163,6 @@ namespace Quarto_SZR_LA_KKG
             jelenlegikep.Location = new Point(100, 200);
             jelenlegikep.Size = new Size(100, 100);
             this.Controls.Add(jelenlegikep);
-
         }
 
         private void jatekosnevellenorzes()
