@@ -306,6 +306,7 @@ namespace Quarto_SZR_LA_KKG
             this.Controls.Add(jelenlegikep);
         }
 
+
         private void jatekosnevellenorzes()
         {
             nev1 = jatekos1_TBOX.Text;
