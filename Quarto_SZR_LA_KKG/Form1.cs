@@ -66,8 +66,30 @@ namespace Quarto_SZR_LA_KKG
 
         private void jatekterEllenorzes()
         {
-            //VÍZSZINTES ELLENÖRZÉS
             List<string> babuKod = new List<string>();
+
+            //BALÁTLÓ ELLENÖRZÉS
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (i == j)
+                    {
+                        babuKod.Add(jatekter[i, j].Name);
+                    }
+                }
+                if (babuKod.Count == 4)
+                {
+                    kodEllenorzes(babuKod);
+                    break;
+                }
+                else
+                {
+                    babuKod.Clear();
+                }
+            }
+
+            //VÍZSZINTES ELLENÖRZÉS
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -108,6 +130,9 @@ namespace Quarto_SZR_LA_KKG
                     babuKod.Clear();
                 }
             }
+            
+
+            
         }
 
         //A LISTÁBA TÖLTÖTT BINÁRIS SZÁMOK ELLENÖRZÉSE
@@ -130,20 +155,17 @@ namespace Quarto_SZR_LA_KKG
                 for (int j = 0; j < 4; j++)
                 {
                     ell += $"{kodTabla[j,i]}";
-                    if (ell.Contains("0000"))
-                    {
-                        MessageBox.Show("nyert");
-                        break;
-                    }
-                    else if (ell.Contains("1111"))
-                    {
-                        MessageBox.Show("nyert");
-                        break;
-                    }
                 }
             }
-            
-            
+            if (ell.Contains("0000"))
+            {
+                MessageBox.Show("nyert");
+            }
+            else if (ell.Contains("1111"))
+            {
+                MessageBox.Show("nyert");
+            }
+
         }
 
         //KIVÁLASZTOTT BÁBÚ
