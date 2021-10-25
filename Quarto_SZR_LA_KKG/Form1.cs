@@ -206,7 +206,7 @@ namespace Quarto_SZR_LA_KKG
             jelenlegikep.Name = Convert.ToString(klikkelt.Name.Split('_')[3]);
         }
 
-        //KIV KÉP ELHELYEZÉSE VÉGE
+        //KIVÁLASZTOTT BÁBÚ ELHELYEZÉSE VÉGE
 
         //START KEZD
         private void start_BTN_Click(object sender, EventArgs e)
