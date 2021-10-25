@@ -34,13 +34,11 @@ namespace Quarto_SZR_LA_KKG
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[2]);
 
-            MessageBox.Show(jatekter[sor, oszlop].Name);
             if (jelenlegikep.BackgroundImage != null)
             {
                 jatekter[sor, oszlop].BackgroundImage = jelenlegikep.BackgroundImage;
                 jatekter[sor, oszlop].Name = jelenlegikep.Name;
                 jatekter[sor, oszlop].Enabled = false;
-                MessageBox.Show(jatekter[sor, oszlop].Name);
             }
             else
             {
@@ -69,16 +67,83 @@ namespace Quarto_SZR_LA_KKG
         private void jatekterEllenorzes()
         {
             //VÍZSZINTES ELLENÖRZÉS
+            List<string> babuKod = new List<string>();
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
                     if (jatekter[i, j].BackgroundImage != null)
                     {
-                        
+                        babuKod.Add(jatekter[i, j].Name);
+                    }
+                }
+                if (babuKod.Count == 4)
+                {
+                    kodEllenorzes(babuKod);
+                    break;
+                }
+                else
+                {
+                    babuKod.Clear();
+                }
+            }
+
+            //FÜGGŐLEGES ELLENÖRZÉS
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (jatekter[j, i].BackgroundImage != null)
+                    {
+                        babuKod.Add(jatekter[j, i].Name);
+                    }
+                }
+                if (babuKod.Count == 4)
+                {
+                    kodEllenorzes(babuKod);
+                    break;
+                }
+                else
+                {
+                    babuKod.Clear();
+                }
+            }
+        }
+
+        //A LISTÁBA TÖLTÖTT BINÁRIS SZÁMOK ELLENÖRZÉSE
+        private void kodEllenorzes(List<string> babuKod)
+        {
+            MessageBox.Show($"{babuKod[0]} , {babuKod[1]} , {babuKod[2]} , {babuKod[3]}");
+            string[,] kodTabla = new string[4, 4];
+                //LISTA 2D TÖMBBEN
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    kodTabla[i, j] = babuKod[i].Substring(j, 1);
+                }
+            }
+                //2D TÖMB OSZLOPOS NÉZETE
+            string ell = "";
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    ell += $"{kodTabla[j,i]}";
+                    if (ell.Contains("0000"))
+                    {
+                        MessageBox.Show("nyert");
+                        break;
+                    }
+                    else if (ell.Contains("1111"))
+                    {
+                        MessageBox.Show("nyert");
+                        break;
                     }
                 }
             }
+            
+            
         }
 
         //KIVÁLASZTOTT BÁBÚ
@@ -91,7 +156,6 @@ namespace Quarto_SZR_LA_KKG
 
             jelenlegikep.BackgroundImage = babuk[sor, oszlop].BackgroundImage;
             jelenlegikep.Name = Convert.ToString(klikkelt.Name.Split('_')[3]);
-            MessageBox.Show(klikkelt.Name);
         }
 
         //KIV KÉP ELHELYEZÉSE VÉGE
