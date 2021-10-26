@@ -38,19 +38,21 @@ namespace Quarto_SZR_LA_KKG
             this.start_BTN = new System.Windows.Forms.Button();
             this.keplista = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.keszitoktextbox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(12, 139);
@@ -62,6 +64,7 @@ namespace Quarto_SZR_LA_KKG
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
             this.label2.Location = new System.Drawing.Point(12, 200);
@@ -124,25 +127,16 @@ namespace Quarto_SZR_LA_KKG
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(165, 9);
+            this.label3.Image = global::Quarto_SZR_LA_KKG.Properties.Resources.TITLEE;
+            this.label3.Location = new System.Drawing.Point(115, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 64);
+            this.label3.Size = new System.Drawing.Size(392, 64);
             this.label3.TabIndex = 5;
-            this.label3.Text = "QUARTO";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = global::Quarto_SZR_LA_KKG.Properties.Resources.kezdo21;
-            this.pictureBox1.Location = new System.Drawing.Point(143, 243);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 275);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.label3.Text = "                          ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 
@@ -205,7 +199,7 @@ namespace Quarto_SZR_LA_KKG
             // 
             this.button4.BackColor = System.Drawing.Color.Yellow;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(571, -2);
+            this.button4.Location = new System.Drawing.Point(561, 225);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(23, 27);
             this.button4.TabIndex = 11;
@@ -214,12 +208,39 @@ namespace Quarto_SZR_LA_KKG
             this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(149, 296);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(310, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
+            // 
+            // keszitoktextbox
+            // 
+            this.keszitoktextbox.BackColor = System.Drawing.SystemColors.InfoText;
+            this.keszitoktextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.keszitoktextbox.ForeColor = System.Drawing.Color.Yellow;
+            this.keszitoktextbox.Location = new System.Drawing.Point(12, 258);
+            this.keszitoktextbox.Name = "keszitoktextbox";
+            this.keszitoktextbox.Size = new System.Drawing.Size(569, 230);
+            this.keszitoktextbox.TabIndex = 12;
+            this.keszitoktextbox.Text = "Katona Koppány Gábor\n\nSzudár Richárd\n\nLázár Adrián\n";
+            this.keszitoktextbox.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImage = global::Quarto_SZR_LA_KKG.Properties.Resources.hatter;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(593, 500);
+            this.Controls.Add(this.keszitoktextbox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -250,13 +271,14 @@ namespace Quarto_SZR_LA_KKG
         private System.Windows.Forms.Button start_BTN;
         private System.Windows.Forms.ImageList keplista;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox keszitoktextbox;
     }
 }
 

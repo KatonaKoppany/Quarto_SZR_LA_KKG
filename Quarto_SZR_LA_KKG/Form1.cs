@@ -216,6 +216,7 @@ namespace Quarto_SZR_LA_KKG
         private void start_BTN_Click(object sender, EventArgs e)
         {
             jatekosnevellenorzes();
+            utasitas();
         }
         //START VÉGE
 
@@ -232,6 +233,8 @@ namespace Quarto_SZR_LA_KKG
             button3.Visible = false;
             richTextBox1.Visible = false;
             button2.Visible = false;
+            button4.Visible = false;
+            keszitoktextbox.Visible = false;
 
             int x = 286;
             int y = 30;
@@ -248,6 +251,7 @@ namespace Quarto_SZR_LA_KKG
                     kep1.BackColor = Color.White;
                     kep1.MouseClick += new MouseEventHandler(jatekterklikk);
                     kep1.Name = $"jatek_{i}_{j}";
+                    kep1.BackColor = Color.Black;
                     this.Controls.Add(kep1);
                     jatekter[i, j] = kep1;
 
@@ -300,14 +304,27 @@ namespace Quarto_SZR_LA_KKG
             labeljelen.Location = new Point(75, 140);
             labeljelen.Text = "Jelenlegi bábú";
             labeljelen.Font = new Font("Arial", 14, FontStyle.Bold);
-            labeljelen.ForeColor = System.Drawing.Color.White;
+            labeljelen.ForeColor = System.Drawing.Color.Yellow;
             labeljelen.Size = new Size(200, 50);
+            labeljelen.TextAlign = ContentAlignment.MiddleCenter;
             this.Controls.Add(labeljelen);
 
             jelenlegikep = new PictureBox();
-            jelenlegikep.Location = new Point(100, 200);
+            jelenlegikep.Location = new Point(120, 200);
             jelenlegikep.Size = new Size(100, 100);
             this.Controls.Add(jelenlegikep);
+        }
+
+        private void utasitas()
+        {
+            Label utasitas = new Label();
+            utasitas.Location = new Point(380, 750);
+            utasitas.Text = "dablaty";
+            utasitas.Font = new Font("Arial", 14, FontStyle.Bold);
+            utasitas.ForeColor = System.Drawing.Color.Yellow;
+            utasitas.Size = new Size(200, 50);
+            utasitas.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(utasitas);
         }
 
 
@@ -347,7 +364,7 @@ namespace Quarto_SZR_LA_KKG
         //KÉSZÍTŐK KEZD
         private void button3_Click(object sender, EventArgs e)
         {
-            PictureBox picturebox1 = new PictureBox();
+            /*PictureBox picturebox1 = new PictureBox();
             picturebox1.Location = new Point(-6, -4);
             picturebox1.Size = new Size(212, 508);
             picturebox1.BackColor = Color.White;
@@ -405,14 +422,16 @@ namespace Quarto_SZR_LA_KKG
             keszitoklabel[1] = kopi;
             keszitoklabel[2] = adrian;
             richTextBox1.Visible = false;
-            button2.Visible = false;
+            button2.Visible = false;*/
+            keszitoktextbox.Visible = true;
+            button4.Visible = true;
         }
         //KÉSZÍTŐK VÉGE
 
         //X BUTTON KEZD
         private void button4_Click(object sender, EventArgs e)
         {
-            label3.Visible = true;
+            /*label3.Visible = true;
             label2.Visible = true;
             label1.Visible = true;
             jatekos1_TBOX.Visible = true;
@@ -426,8 +445,14 @@ namespace Quarto_SZR_LA_KKG
             keszitok[2].Visible = false;
             keszitoklabel[0].Visible = false;
             keszitoklabel[1].Visible = false;
-            keszitoklabel[2].Visible = false;
+            keszitoklabel[2].Visible = false;*/
             button4.Visible = false;
+            keszitoktextbox.Visible = false;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
         //X BUTTON VÉGE
     }

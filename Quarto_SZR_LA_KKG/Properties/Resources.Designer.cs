@@ -63,6 +63,16 @@ namespace Quarto_SZR_LA_KKG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hatter {
+            get {
+                object obj = ResourceManager.GetObject("hatter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kezdo {
             get {
                 object obj = ResourceManager.GetObject("kezdo", resourceCulture);
@@ -96,6 +106,46 @@ namespace Quarto_SZR_LA_KKG.Properties {
         internal static System.Drawing.Bitmap kezdo21 {
             get {
                 object obj = ResourceManager.GetObject("kezdo21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tabla {
+            get {
+                object obj = ResourceManager.GetObject("tabla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tablaaaa {
+            get {
+                object obj = ResourceManager.GetObject("tablaaaa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TITLE {
+            get {
+                object obj = ResourceManager.GetObject("TITLE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TITLEE {
+            get {
+                object obj = ResourceManager.GetObject("TITLEE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
